@@ -184,6 +184,8 @@ class Command extends AkairoModule {
          */
         this.ignorePermissions = typeof ignorePermissions === 'function' ? ignorePermissions.bind(this) : ignorePermissions;
 
+        this.args = args;
+
         /**
          * The ID of this command.
          * @name Command#id
