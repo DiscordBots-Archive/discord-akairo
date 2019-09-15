@@ -119,7 +119,11 @@ class ListenerHandler extends AkairoHandler {
      */
     setEmitters(emitters) {
         for (const [key, value] of Object.entries(emitters)) {
-            if (!isEventEmitter(value)) throw new AkairoError('INVALID_TYPE', key, 'EventEmitter', true);
+            if (!isEventEmitter(value)) {
+                console.error(key, value)
+                throw new AkairoError('INVALID_TYPE', key, 'EventEmitter', true);
+            }
+
             this.emitters.set(key, value);
         }
 
