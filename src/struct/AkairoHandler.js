@@ -125,7 +125,7 @@ class AkairoHandler extends EventEmitter {
                 if (!m) return null;
                 if (m.prototype instanceof this.classToHandle) return m;
                 return m.default ? findExport.call(this, m.default) : null;
-            }.call(this, require(thing));
+            }.call(this, import(thing));
 
         if (mod && mod.prototype instanceof this.classToHandle) {
             mod = new mod(this); // eslint-disable-line new-cap
